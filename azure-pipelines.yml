@@ -2,5 +2,5 @@
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: echo '"hello-world" > sample.txt'
+    script: echo hello-world
 
