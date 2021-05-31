@@ -1,12 +1,8 @@
-# Starter pipeline
-resources:
-  containers:
-  - container: linux # reusable alias
-    image: ubuntu:16.04
+pool:
+  vmImage: "ubuntu 16.04"
 
-jobs:
-- job: a
-  container: linux # reference
 
-- job: b
-  container: linux # reference
+- task: Docker@2
+  inputs:
+    command: 'buildAndPush'
+    Dockerfile: 'ubuntu'
