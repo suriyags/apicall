@@ -1,8 +1,17 @@
+# HTML
+# Archive your static HTML project and save it with the build record.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- suriyags/apicall
+
 pool:
-  vmImage: "ubuntu 16.04"
+  httpd
 
-
-- task: Docker@2
+steps:
+- task: ArchiveFiles@2
   inputs:
-    command: 'buildAndPush'
-    Dockerfile: 'ubuntu'
+    rootFolderOrFile: 'index.html'
+    includeRootFolder: false
+- task: PublishBuildArtifacts@1
