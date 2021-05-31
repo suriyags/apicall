@@ -7,7 +7,7 @@ trigger:
 - suriyags/apicall
 
 pool:
-  httpd
+  ubuntu
 
 steps:
 - task: ArchiveFiles@2
